@@ -1,4 +1,4 @@
-import { SchemaDefinition } from "./types";
+import { SchemaDefinition } from "./types.js";
 
 export default class Schema<T> {
   private schema: SchemaDefinition<T>;

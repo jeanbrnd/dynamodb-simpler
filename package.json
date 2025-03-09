@@ -1,16 +1,21 @@
 {
-  "name": "easy-dynamodb",
+  "name": "dynamodb-simpler",
   "version": "1.0.0",
-  "description": "Uma biblioteca simples para interagir com DynamoDB usando AWS SDK.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "description": "A simple library to interact with DynamoDB using AWS SDK.",
+  "main": "build/index.js",
+  "type": "module",
+ "bin": {
+  "dynamodb-simpler": "build/index.js"
+},
+
   "scripts": {
-    "build": "tsc",
-    "prepare": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "link": "npm link",
+    "build": "tsup",
+    "test": "npm run build && npm run link",
+    "predev": "rm -rf playground && mkdir playground",
+    "dev": "npm run build && cd playground && dynamodb-simpler",
+    "tsx": "tsx",
+    "check": "tsc --noEmit"
   },
   "keywords": [
     "dynamodb",
@@ -18,11 +23,20 @@
     "database",
     "typescript"
   ],
-  "author": "Seu Nome",
-  "license": "MIT",
+  "homepage": "https://github.com/wwwgostozin/easy-dynamodb#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wwwgostozin/easy-dynamodb.git"
+  },
+  "author": {
+    "name": "wwwgostozin",
+    "url": "https://github.com/wwwgostozin"
+  },
+  "license": "ISC",
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.758.0",
-    "@aws-sdk/lib-dynamodb": "^3.758.0"
+    "@aws-sdk/lib-dynamodb": "^3.758.0",
+    "tsup": "^8.4.0"
   },
   "devDependencies": {
     "typescript": "^5.8.2"

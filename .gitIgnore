@@ -1,21 +1,13 @@
-# Folders
-/build
-/dist
-/discloud
 /deprecated
-/node_modules
+dist
+build
+node_modules
 
-# Files
 /.env
-/.env.dev
-/.env.development
-/package-lock.json
+*.env.development
+*.env.dev
+package-lock.json
 
-# Config files
-/firebase.json
-
-# Extensions
-*.sqlite
-*.exe
-*.db
-*.development.json
+playground
+/playground
+templates/*/build/

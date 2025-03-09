@@ -5,9 +5,9 @@ import {
     ScanCommand,
   } from "@aws-sdk/lib-dynamodb";
   import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
-  import Schema from "./schema";
-  import { createTableIfNotExists } from "./utils";
-  import { DynamoConfig } from "./types";
+  import Schema from "./schema.js";
+  import { createTableIfNotExists } from "./utils.js";
+  import { DynamoConfig } from "./types.js";
   
   export default class Model<T> {
     private client: DynamoDBDocumentClient;

@@ -1,0 +1,13 @@
+/deprecated
+/src
+node_modules
+*node_modules
+/.vscode
+/playground
+
+/.env
+*.env.development
+*.env.dev
+/.gitignore
+/build.config.ts
+/tsconfig.json

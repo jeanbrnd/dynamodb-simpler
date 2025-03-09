@@ -1,5 +1,5 @@
-import Schema from './schema';
-import DynamoClient from './client';
-import Model from './model';
+import Schema from './schema.js';
+import DynamoClient from './client.js';
+import Model from './model.js';
 
 export { Schema, DynamoClient, Model }
