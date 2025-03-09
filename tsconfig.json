@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "skipLibCheck": true,
+      "resolveJsonModule": true,
+      "strict": true,
+  
+      "lib": ["ESNext"],
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "Bundler",
+  
+      "outDir": "./dist",
+      "rootDir": "src",
+      "declaration": true,
+      "declarationMap": true,
+      "sourceMap": true
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", "dist"]
+  }
+  

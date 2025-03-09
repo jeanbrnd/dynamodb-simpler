@@ -1,0 +1,30 @@
+{
+  "name": "easy-dynamodb",
+  "version": "1.0.0",
+  "description": "Uma biblioteca simples para interagir com DynamoDB usando AWS SDK.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dynamodb",
+    "aws-sdk",
+    "database",
+    "typescript"
+  ],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.758.0",
+    "@aws-sdk/lib-dynamodb": "^3.758.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
