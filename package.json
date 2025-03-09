@@ -1,15 +1,12 @@
 {
   "name": "dynamodb-simpler",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A simple library to interact with DynamoDB using AWS SDK.",
-  "main": "build/index.js",
-  "type": "module",
- "bin": {
-  "dynamodb-simpler": "build/index.js"
-},
-
+  "main": "build/index.js", 
+  "module": "build/index.mjs", 
+  "types": "build/index.d.ts", 
   "scripts": {
-  "link": "npm link",
+    "link": "npm link",
     "build": "tsup",
     "test": "npm run build && npm run link",
     "predev": "rm -rf playground && mkdir playground",

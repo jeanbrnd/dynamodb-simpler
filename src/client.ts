@@ -1,7 +1,7 @@
 import { DynamoDBClient, DynamoDBClientConfig } from "@aws-sdk/client-dynamodb";
-import Schema from "./schema";
-import Model from "./model";
-import { DynamoConfig } from "./types";
+import Schema from "./schema.js";
+import Model from "./model.js";
+import { DynamoConfig } from "./types.js";
 
 export default class DynamoClient {
   private client: DynamoDBClient;
