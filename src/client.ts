@@ -10,7 +10,7 @@ export default class DynamoClient {
     this.client = new DynamoDBClient(config);
   }
 
-  registerModel<T>(config: DynamoConfig, schema: Schema<T>): Model<T> {
+  registerModel<T extends Record<string, any>>(config: DynamoConfig, schema: Schema<T>): Model<T> {
     return new Model<T>(this.client, config, schema);
   }
 }
