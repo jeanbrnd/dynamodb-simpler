@@ -1,7 +1,16 @@
-import { DynamoDBClient, CreateTableCommand } from "@aws-sdk/client-dynamodb";
+import { DynamoDBClient, CreateTableCommand, ListTablesCommand } from "@aws-sdk/client-dynamodb";
 
-export async function createTableIfNotExists(client: DynamoDBClient, tableName: string) {
+async function tableExists(client: DynamoDBClient, tableName: string): Promise<boolean> {
+  const { TableNames } = await client.send(new ListTablesCommand({}));
+  return TableNames?.includes(tableName) ?? false;
+}
+
+export async function createTableIfNotExists(client: DynamoDBClient, tableName: string): Promise<boolean> {
   try {
+    if (await tableExists(client, tableName)) {
+      return false; 
+    }
+
     const command = new CreateTableCommand({
       TableName: tableName,
       AttributeDefinitions: [{ AttributeName: "id", AttributeType: "S" }],
@@ -10,10 +19,11 @@ export async function createTableIfNotExists(client: DynamoDBClient, tableName: 
     });
 
     await client.send(command);
-   
-  } catch (error: any) {
-    if (error.name !== "ResourceInUseException") {
-      throw new Error(error);
+    return true; 
+  } catch (error) {
+    if (error instanceof Error && error.name !== "ResourceInUseException") {
+      throw error;
     }
+    return false;
   }
 }
