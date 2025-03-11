@@ -10,7 +10,7 @@
     "build": "tsup",
     "test": "npm run build && npm run link",
     "predev": "rm -rf playground && mkdir playground",
-    "dev": "npm run build && cd playground && dynamodb-simpler",
+    "dev": "npm run build && cd playground",
     "tsx": "tsx",
     "check": "tsc --noEmit"
   },
@@ -20,14 +20,14 @@
     "database",
     "typescript"
   ],
-  "homepage": "https://github.com/wwwgostozin/easy-dynamodb#readme",
+  "homepage": "https://github.com/wwwzin/easy-dynamodb#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wwwgostozin/easy-dynamodb.git"
+    "url": "git+https://github.com/wwwzin/easy-dynamodb.git"
   },
   "author": {
     "name": "wwwgostozin",
-    "url": "https://github.com/wwwgostozin"
+    "url": "https://github.com/wwwzin"
   },
   "license": "ISC",
   "dependencies": {

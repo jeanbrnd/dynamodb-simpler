@@ -12,3 +12,8 @@ export type DynamoConfig = {
   tableName: string;
   autoCreateTable?: boolean;
 };
+
+export type QueryOptions = {
+  consistentRead?: boolean; 
+  returnValues?: "ALL_OLD" | "ALL_NEW" | "UPDATED_OLD" | "UPDATED_NEW" | "NONE"; 
+};
